@@ -7,15 +7,18 @@ public class BurnWood : MonoBehaviour,Action
     Gamemanager g;
     public GameObject Fire;
     MeshRenderer mr;
+    public GameObject ColliderParent;
     public void Onpress()
     {
         if(g.wood <= 0)
         {
             Fire.SetActive(false);
+            ColliderParent.SetActive(true);
             return;
         }
         g.updateWoodValue(g.GetWood()-1);
         Fire.SetActive(true);
+        ColliderParent.SetActive(false);
     }
 
     // Start is called before the first frame update

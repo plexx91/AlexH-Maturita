@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Action
 {
+    public string CloseAnim = "Doorclose";
+    public string OpenAnim = "DoorOpen_";
+
     public void Onpress()
     {
         Toggledoor();
@@ -19,12 +22,12 @@ public class Door : MonoBehaviour, Action
     {
         if (isopen)
         {
-            DoorAnimation.Play("Doorclose");
+            DoorAnimation.Play(CloseAnim);
             isopen = false;
         }
         else
         {
-            DoorAnimation.Play("DoorOpen_");
+            DoorAnimation.Play(OpenAnim);
             isopen=true;
         }
     }
